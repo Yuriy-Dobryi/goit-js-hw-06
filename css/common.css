@@ -22,3 +22,21 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+/* for 3 task  */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+  width: 360px;
+}
+.list-item {
+  border: 10px solid black;
+  border-radius: 15px;
+  list-style: none;
+}
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

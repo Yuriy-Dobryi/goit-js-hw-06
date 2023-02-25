@@ -12,3 +12,20 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryListEl = document.querySelector(".gallery");
+
+const imagesMarkup = images
+  .map(({ url, alt }) => `<li class='list-item'><img class='image' src="${url}" alt="${alt}"></li>`)
+  .join('');
+  console.log(imagesMarkup);
+
+galleryListEl.insertAdjacentHTML(
+  'afterbegin',
+  imagesMarkup
+);
+
+galleryListEl.insertAdjacentHTML(
+  "afterend",
+  "<a target='_blank' href='https://www.youtube.com/watch?v=BxzwyeViNs4'>А це просто балдьожний український трек</a>"
+);
