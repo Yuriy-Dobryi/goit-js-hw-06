@@ -25,6 +25,7 @@ galleryListEl.insertAdjacentHTML(
   imagesMarkup
 );
 
+// ---------------------
 galleryListEl.insertAdjacentHTML(
   "afterend",
   "<a target='_blank' href='https://www.youtube.com/watch?v=BxzwyeViNs4'>А це просто балдьожний український трек</a>"
