@@ -11,16 +11,29 @@ const ref = {
 }
 
 const createBoxes = (amount) => {
-  let boxesMarkup = ``;
-  for (let value = 30, index = 0; index < amount; index += 1, value += 10) {
-    boxesMarkup += `<div style="width: ${value}px; height: ${value}px; background-color: ${getRandomHexColor()}; margin-bottom: 10px" ></div>`;
+  let boxesMarkup = boxes.innerHTML;
+  let size;
+  if (ref.boxes.children.length > 0) {
+    size = parseInt(ref.boxes.lastElementChild.style.width) + 10;
+    console.log(size);
   }
+  else {
+    size = 30;
+  }
+  
+  for (let index = 0; index < amount; index += 1) {
+    boxesMarkup += `<div style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()}; margin-bottom: 10px" ></div>`;
+    console.log(size);
+    size += 10;
+  }
+  console.log(size);
   return boxesMarkup;
 }
 
 const onDataCreateBtn = () => {
   const boxesMarkup = createBoxes(Number(ref.input.value));
   ref.boxes.insertAdjacentHTML("beforeend", boxesMarkup);
+  ref.input.value = 0;
 }
 
 const onDataDestroyBtn = () => {
