@@ -11,16 +11,19 @@ const ref = {
 }
 
 const createBoxes = (amount) => {
+  // Записуємо в змінну розмітку блоку 'boxes' (навіть якщо вона пуста)
   let boxesMarkup = boxes.innerHTML;
   let size;
+  // Якщо кількість елементів (дітей) блоку 'boxes' більше ніж 1, значить змінна 'size' буде мати значення останнього елемента, а саме його розмір 
   if (ref.boxes.children.length > 0) {
     size = parseInt(ref.boxes.lastElementChild.style.width) + 10;
     console.log(size);
   }
+  // Якщо ж ні, то це значить що блок пустий, а тому 'size' буде дорівнювати 30
   else {
     size = 30;
   }
-  
+  // І лише тепер створюємо розмітку таким чином, щоб нам уже було не важливо, чи були там бокси до кліку додавання, чи ні, так як вище ми все це врахували, і тепер відбувається звичайний процес генерування нової розмітки, яка або буде додаватись до уже створеної, або просто буде створена якщо такої немає але користувач захотів додати
   for (let index = 0; index < amount; index += 1) {
     boxesMarkup += `<div style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()}; margin-bottom: 10px" ></div>`;
     console.log(size);
@@ -33,7 +36,8 @@ const createBoxes = (amount) => {
 const onDataCreateBtn = () => {
   const boxesMarkup = createBoxes(Number(ref.input.value));
   ref.boxes.insertAdjacentHTML("beforeend", boxesMarkup);
-  ref.input.value = 0;
+  // тепер ти задоволена ?)
+  ref.input.value = '';
 }
 
 const onDataDestroyBtn = () => {
