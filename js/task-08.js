@@ -7,7 +7,7 @@ const onFormSubmit = (event) => {
     password: event.currentTarget.password.value,
   };
 
-  if (!formData.email || (!formData.password))
+  if (!formData.email || !formData.password)
     alert("All fields must be filled!");
   else {
     console.log(formData);

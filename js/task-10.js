@@ -11,13 +11,14 @@ const ref = {
 }
 
 const createBoxes = (amount) => {
-  // Записуємо в змінну розмітку блоку 'boxes' (навіть якщо вона пуста)
-  let boxesMarkup = boxes.innerHTML;
+  let boxesMarkup = '';
+  console.log(boxesMarkup);
   let size;
   // Якщо кількість елементів (дітей) блоку 'boxes' більше ніж 1, значить змінна 'size' буде мати значення останнього елемента, а саме його розмір 
   if (ref.boxes.children.length > 0) {
+    console.log(ref.boxes.lastElementChild.style.width);
     size = parseInt(ref.boxes.lastElementChild.style.width) + 10;
-    console.log(size);
+    
   }
   // Якщо ж ні, то це значить що блок пустий, а тому 'size' буде дорівнювати 30
   else {
