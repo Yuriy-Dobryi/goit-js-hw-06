@@ -7,12 +7,11 @@ const onFormSubmit = (event) => {
     password: event.currentTarget.password.value,
   };
 
-  if (!formData.email || !formData.password)
-    alert("All fields must be filled!");
-  else {
+  if (!formData.email || !formData.password) {
+    return alert("All fields must be filled!");
+  }
     console.log(formData);
     event.currentTarget.reset();
-  }
 }
 
 form.addEventListener('submit', onFormSubmit)
