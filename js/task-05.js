@@ -5,6 +5,6 @@ const ref = {
 
 const onInput = ({ currentTarget }) =>
 (ref.nameOutput.textContent =
-  currentTarget.value === "" ? "Anonymous" : currentTarget.value);
+  !currentTarget.value ? "Anonymous" : currentTarget.value);
 
 ref.nameInput.addEventListener('input', onInput);
