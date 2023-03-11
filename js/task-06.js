@@ -10,7 +10,7 @@ const onInput = ({ currentTarget: curTarg }) => {
 
 }
 
-// inputRef.addEventListener('blur', onInput);
+inputRef.addEventListener('blur', onInput);
 
 // const inputEl = document.querySelector("#validation-input");
 // inputEl.addEventListener("blur", (event) => {
